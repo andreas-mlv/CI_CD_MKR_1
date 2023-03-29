@@ -18,9 +18,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+  
+    - name: Analysing the code with pylint
+      run: |
+        pytest unit_tests.py --html=report.html --self-contained-html
+
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
-    - name: Analysing the code with pylint
-      run: |
-        pytest unit_tests.py
+
