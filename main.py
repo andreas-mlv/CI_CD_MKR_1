@@ -13,3 +13,18 @@ def read_file(filename):
     except:
         return None
 
+def count_words(text):
+    splitters = [
+        ",",
+        " ",
+        ":",
+        ";",
+    ]
+    splitters_count = 0
+    for splitter in splitters:
+        splitters_count += text.count(splitter)
+    # IF last character is not a splitter, minus 1
+    if text[-1] not in splitters:
+        splitters_count -= 1
+    return splitters_count + 1
+
