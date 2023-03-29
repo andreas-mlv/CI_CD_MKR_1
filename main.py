@@ -28,3 +28,16 @@ def count_words(text):
         splitters_count -= 1
     return splitters_count + 1
 
+def count_lines(text):
+    splitters = [
+        ".",
+        "!",
+        "?",
+        "...",
+    ]
+    splitters_count = 0
+    for splitter in splitters:
+        splitters_count += text.count(splitter)
+    return splitters_count + 1
+
+
